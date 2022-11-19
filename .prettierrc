@@ -1,7 +1,7 @@
 {
   "singleQuote": true,
   "trailingComma": "none",
-  "printWidth": 20,
+  "printWidth": 50,
   "endOfLine": "auto",
   "comma-dangle": "off"
 }

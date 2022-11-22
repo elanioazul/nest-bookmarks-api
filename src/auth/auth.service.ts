@@ -27,7 +27,7 @@ export class AuthService {
             hash
           }
         });
-      return this.signToker(user.id, user.email);
+      return this.signToken(user.id, user.email);
     } catch (error) {
       if (
         error instanceof
@@ -67,10 +67,10 @@ export class AuthService {
         'Credential incorrect'
       );
 
-    return this.signToker(user.id, user.email);
+    return this.signToken(user.id, user.email);
   }
 
-  async signToker(
+  async signToken(
     userId: number,
     email: string
   ): Promise<{ access_token: string }> {

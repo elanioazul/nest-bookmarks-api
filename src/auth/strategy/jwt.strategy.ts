@@ -8,7 +8,8 @@ import {
 
 @Injectable()
 export class JwsStrategy extends PassportStrategy(
-  Strategy
+  Strategy,
+  'jwt-hhc'
 ) {
   constructor(private conf: ConfigService) {
     super({
@@ -16,5 +17,9 @@ export class JwsStrategy extends PassportStrategy(
         ExtractJwt.fromAuthHeaderAsBearerToken(),
       secretOrKey: conf.get('JWT_SECRET')
     });
+  }
+
+  validate(payload: any) {
+    return payload;
   }
 }
